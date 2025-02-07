@@ -1,0 +1,6 @@
+name,type,robots,propertiesTestSingleTask.createTask,,,,
+testscripts.SingleTaskScenario#TestForCreatingTodoList,test,,,,,,
+testscripts.MultiTaskScenario#TestForCreatingMultiTodoList,test,,,,,,
+testscripts.MultiTaskScenario#TestForUpdatingMultiTodoList,test,,,,,,os:win;chrome:80
+testscripts.TodoRobotsScenario#TestForRobot1,test,,,,,,
+testscripts.TodoRobotsScenario#TestForRobot2,test,,,,,,
