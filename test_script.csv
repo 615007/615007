@@ -1,0 +1,39 @@
+Name,Step,Expected Result
+Open a webpage,Given I open the Playwright website,
+Open a webpage,"Then the title should be ""Fast and reliable end-to-end testing for modern web apps | Playwright""",
+Open a webpage,"steps: const { Given, Then } = require('@cucumber/cucumber');
+const { expect } = require('@playwright/test');
+
+Given('I open the Playwright website', async function() {
+  await this.page.goto('https://playwright.dev');
+});
+
+Then('the title should be {string}', async function(title) {
+  expect(await this.page.title()).toBe(""Fast and reliable end-to-end testing for modern web apps | Playwright"");
+});",
+Open a webpage,"support const { setWorldConstructor, Before, After } = require('@cucumber/cucumber');
+const { chromium } = require('playwright');
+
+class CustomWorld {
+  async openBrowser() {
+    this.browser = await chromium.launch();
+    this.context = await this.browser.newContext();
+    this.page = await this.context.newPage();
+  }
+
+  async closeBrowser() {
+    await this.page.close();
+    await this.context.close();
+    await this.browser.close();
+  }
+}
+
+setWorldConstructor(CustomWorld);
+
+Before(async function() {
+  await this.openBrowser();
+});
+
+After(async function() {
+  await this.closeBrowser();
+});",
