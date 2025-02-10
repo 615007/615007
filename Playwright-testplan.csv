@@ -1,0 +1,4 @@
+name,type,robots,propertiesTestSingleTask.createTask,,,,
+SingleTaskScenario#TestForCreatingTodoList,test,,,,,,
+SingleTaskScenario#AnotherTest,test,,,,,,
+,,,,,,,os:win;chrome:80
